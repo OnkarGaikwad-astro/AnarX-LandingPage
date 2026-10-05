@@ -15,6 +15,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Anar X - AI Farm Intelligence",
   description: "AI-powered pomegranate disease detection and farm intelligence system.",
+  icons: {
+    icon: "/ic_launcher.png",
+    apple: "/ic_launcher.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

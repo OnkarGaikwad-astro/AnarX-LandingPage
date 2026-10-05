@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-anar: #E61C5D;
-  --color-anar-dark: #A40D3E;
-  --color-charcoal: #0F0F11;
+  --color-agri-green: #1E6B7A;
+  --color-forest-green: #174F5C;
+  --color-leaf-green: #2D8A9E;
+  --color-dark-green: #0E3A45;
+  --color-off-white: #EEF6FB;
+  --color-amber: #E26D24;
+  --color-amber-light: #F4A261;
   --color-surface: #ffffff;
 }
 
 :root {
-  --background: #F8FAFC;
-  --foreground: #0F172A;
+  --background: #EEF6FB;
+  --foreground: #0E2D35;
 }
 
 @theme inline {
@@ -23,27 +27,50 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 .modern-panel {
-  background: var(--color-surface);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px -8px rgba(30, 107, 122, 0.08);
+  border-radius: 20px;
   overflow: hidden;
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0px); }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  color: var(--foreground);
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.glass-dark {
+  background: rgba(14, 58, 69, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
